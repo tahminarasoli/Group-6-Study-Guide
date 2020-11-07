@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title></title>
+  <title>Study-Guide</title>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- you will need these styles and scripts -->
   <!-- if you create new .html files, copy them into the head -->
   <!-- if those files are in a folder, be sure to adjust all the paths! -->
   <link rel="stylesheet" data-name="vs/editor/editor.main" href="./lib/monaco/min/vs/editor/editor.main.css">
+
+  <script src='lib/prettier/standalone.js'></script>
+  <script src='lib/prettier/parser-babel.js'></script>
+
+  <script>var require = { paths: { 'vs': 'lib/monaco/min/vs' } };</script>
+  <script src="lib/monaco/min/vs/loader.js"></script>
+  <script src="lib/monaco/min/vs/editor/editor.main.nls.js"></script>
+  <script src="lib/monaco/min/vs/editor/editor.main.js"></script>
+
+  <script src='lib/wc-code-along.js'></script>
+
+  <script src='lib/evaluation-buttons.js'></script>
+
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/flexboxgrid.css">
+  <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <script src='./lib/prettier/standalone.js'></script>
-  <script src='./lib/prettier/parser-babel.js'></script>
-
-  <script>var require = { paths: { 'vs': './lib/monaco/min/vs' } };</script>
-  <script src="./lib/monaco/min/vs/loader.js"></script>
-  <script src="./lib/monaco/min/vs/editor/editor.main.nls.js"></script>
-  <script src="./lib/monaco/min/vs/editor/editor.main.js"></script>
-
-  <script src='./lib/wc-code-along.js'></script>
-
-  <script src='./lib/evaluation-buttons.js'></script>
 
 </head>
 
@@ -41,7 +45,359 @@
       </nav>
     </div>
   </header>
- <section id="main"></section> 
+
+ <section id="main">
+  <!-- sidebar, list of all topics-->
+    <div class="container">
+      <div class="row top-lg">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+          <div class="side">
+            <h2>Javascript Fundamentals</h2>
+            <ol type="1" class="study-list">
+              <li><a href="#intro">Introduction</a></li>
+              <li><a href="#var-example">Variables</a> </li>
+              <li><a href="#swaps">Value-Swaps</a></li>
+              <li><a href="#primitive">Primitive types</a></li>
+              <li><a href="#operator">Logical Operators</a></li>
+              <li><a href="#block">Block Scope</a></li>
+              <li><a href="#conditional">Conditionals</a></li>
+              <li><a href="#compar">Comparisons</a></li>
+              <li><a href="#func">Function</a></li>
+              <li><a href="#loop">Loops</a></li>
+              <li><a href="#br">Break Continue</a></li>
+              <li><a href="#inc-dec">Increment Decrement</a></li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+          <div class="content">
+            <h1>JavaScript Study Guide</h1>
+            <p>JavaScript is a programming language used to <br>
+              add interactivity to a website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main topics block-->
+  <section id="topics">
+    <div class="container">
+      <div class="row">
+        <!--the second sidebar-->
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+          <div class="side-2">
+            <ul class="study-list">
+              <li>essen's</li>
+              <li>examples</li>
+              <li>explanation</li>
+              <li>exercises</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+          <!--first three main topics block-->
+          <div class="topics">
+            <!--topics class-->
+            <div
+              class="row row center-xs center-sm center-md center-lg middle-lg middle-md middle-xs middle-sm features1">
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fab fa-js"></i> <br>
+                <h3>Javascript fundamentals</h3>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fab fa-connectdevelop"></i> <br>
+                <h3> Loops</h3>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fas fa-book"></i> <br>
+                <h3> Data Types</h3>
+              </div>
+            </div>
+            <!--end of first three main topics block-->
+            <div
+              class="row row center-xs center-sm center-md center-lg middle-lg middle-md middle-xs middle-sm features2">
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fas fa-laptop-code"></i> <br>
+                <h3> Variables</h3>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fab fa-d-and-d"></i> <br>
+                <h3>Operators</h3>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <i class="fas fa-file-code"></i> <br>
+                <h3> Condations</h3>
+              </div>
+            </div>
+            <div class="examples">
+              <!--example and explanation area-->
+              <div class="row center-xs center-sm center-md center-lg">
+                <!--introduction-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                  </p>
+                  <h3 id="intro"> What is JavaScript?</h3>
+                  <div class="">
+                    <p>JavaScript was initially created to “make web pages alive”.<br>
+
+                      The programs in this language are called scripts. They can be written right in a web page’s HTML
+                      and run automatically as the page loads.<br>
+
+                      Scripts are provided and executed as plain text. They don’t need special preparation or
+                      compilation to run.<br>
+
+                      In this aspect, JavaScript is very different from another language called Java.<br>
+                    </p>
+                  </div>
+                </div>
+                <!--VARIABLES-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                  </p>
+                  <h3 id="var-example"> Variables Example</h3>
+                  <div class="example">
+                    <code-along src="example/snippets/var.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--SWAPS-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                  </p>
+                  <h3 id="swaps"> Value Swaps Example</h3>
+                  <div class="example">
+                    <code-along src="example\snippets\swaps.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <p class="explain">
+                </p>
+                <!--Primitive types-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="primitive"> Primitive-types</h3>
+                  <p class="explain">
+                    <b>Boolean</b>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\boolean-undefined-null.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--NUMBER-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                    <b>Number</b>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\number.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--STRING-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                    <b>String</b>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\string.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--TYPEOF-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                    <b>TypeOf</b>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\typeof.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--logical operators-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="operator"> Logical Operators</h3>
+                  <p class="explain">
+                    <b>OR ||</b>
+                    the or operator does not evaluate to true or false!<br>
+                    it returns the left value or the right value<br>
+                    - if the left is truthy, it returns the left value<br>
+                    - if the left is falsy, it returns the right value<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\or.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--AND-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                    <b>And &&</b>
+                    the and operator does not evaluate to true or false!<br>
+                    it returns the left value or the right value<br>
+                    - if the left is falsy, it returns the left value<br>
+                    - if the left is truthy, it returns the right value<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\and.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <p class="explain">
+                    <b>Not !</b>
+                    the not operator does evaluate to true or false<br>
+                    - if the value is truthy, it returns false<br>
+                    - if the value is falsy, it returns true<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\not.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--end of logical operators-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="block"> Block Scope</h3>
+                  <p class="explain">
+                    <b>Block Scope: const</b><br>
+                    writing curly braces creates a new block scope<br>
+                    block scopes only effect variables<br>
+                    everything else you've learned so far still applies<br>
+
+                    here are few rules to keep in mind<br>
+                    1. variables declared outside a block:<br>
+                    a. are available inside the block if there is not a block variable with the same name<br>
+                    b. are not available inside the block if there is a new variable of the same name<br>
+
+                    2. variables declared inside a block:<br>
+                    a. are available inside the block<br>
+                    b. are not available outside the block<br>
+                    c.'replace' variables declared outside<br>
+                    <b>`let` and Block Scope<br></b>
+
+                    all of the rules you learned in the last example apply to `let` variables<br>
+                    plus these new rules:<br>
+
+                    3. `let variables declared outside of a block ...<br>
+                    a. can be modified inside the block if they are not replaced<br>
+                    b. cannot be modified inside the block if they are replaced<br>
+
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\rule-1a.js" class='code-example'></code-along>
+                  </div>
+                  <p class="explain">Rule 3</p>
+                  <div class="example">
+                    <code-along src="example\snippets\rule3.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--conditionals-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="conditional"> Conditionals</h3>
+                  <p class="explain">
+                    <b>if / else if / else</b><br>
+
+                    if (condition1) {<br>
+                    statement1<br>
+                    } else if (condition2) {<br>
+                    statement2<br>
+                    } else if (condition3) {<br>
+                    statement3<br>
+                    ...<br>
+                    } else {<br>
+                    statementN<br>
+                    }<br>
+                    multiple options, something will happen no matter what<br>
+                    if no condition is truthy<br>
+                    the else statement will be evaluated<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\conditional.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--end of conditionals-->
+                <!--comparisons-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="compar"> Comparisons</h3>
+                  <p class="explain">
+                    comparing numbers is the simplest, so let's start here<br>
+
+                    the result of comparing numbers will always be a boolean value<br>
+                    comparing numbers works (almost always) like you'd expect<br>
+                    you can (almost always) think of it like comparing numbers in real life<br>
+
+                    there are some edge cases where number comparisons don't behave as you'd expect<br>
+                    but you can worry about those when you face them in your code<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\comparisons.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--Function-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="func"> Functions</h3>
+                  <p class="explain">
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\function.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--loops-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="loop"> Loops</h3>
+                  <p class="explain">
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\for-loop.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--break-continue-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="br"> Break Continue</h3>
+                  <p class="explain">
+                    this statement can be used to exit a loop immediately<br>
+                    using break inside of a conditional is very practical<br>
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\break-continue.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+                <!--increment-decrement-->
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 exercise">
+                  <h3 id="inc-dec">Increment Decrement</h3>
+                  <p class="explain">
+                    Increment
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\increment.js" class='code-example'></code-along>
+                  </div>
+                  <p class="explain">
+                    Decrement
+                  </p>
+                  <div class="example">
+                    <code-along src="example\snippets\decrement.js" class='code-example'></code-along>
+                  </div>
+                  <a href="#logo-header">GO TO TOP PAGE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <footer id="main-footer">
+    <div class="row row center-xs center-sm center-md center-lg middle-lg middle-md middle-xs middle-sm">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p>Study Guide HYF-Group-6, Copyright &copy; 2020</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
