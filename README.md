@@ -34,7 +34,7 @@ Project is created with:
 
 ## Screenshots
 
-In progress...
+![Homepage Screenshot](images/screen-shot-study-guide.png)
 
 ## Status
 
