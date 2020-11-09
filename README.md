@@ -9,7 +9,7 @@
 - [Screenshots](#Screenshots)
 - [Status](#status)
 - [Contributions](#contributions)
-- [Launch](https://rago89.github.io/DuckDuckGoGroup6/)
+- [Launch](https://rago89.github.io/Group-6-Study-Guide/)
 
 ## General info
 
@@ -34,7 +34,7 @@ Project is created with:
 
 ## Screenshots
 
-In progress...
+![Homepage Screenshot](images/screen-shot-study-guide.png)
 
 ## Status
 
